@@ -1,0 +1,19 @@
+<svg id="svg8" width="210mm" height="297mm" version="1.1" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg">
+ <rect id="rect1491" y="21.05" width="210" height="4.3501" style="fill-opacity:.9875;fill:#e0e0e0;paint-order:normal"/>
+ <path id="path1495" d="m0 23.225h210" style="fill-opacity:.9875;fill:#616161;paint-order:normal;stroke:#9e9e9e"/>
+ <path id="path1497" d="m0 23.225h210" style="fill-opacity:.9875;fill:#212121;paint-order:normal;stroke-dasharray:6.00000018, 2.00000006000000008;stroke-dashoffset:20;stroke-width:2;stroke:#757575"/>
+ <g id="g1528">
+  <g id="g1477" transform="translate(-46.182 30.692)">
+   <rect id="rect1471" x="159.73" y="31.221" width="3.8624" height="38.373" style="fill-opacity:.98824;fill:#bdbdbd;paint-order:normal;stroke-width:.62836"/>
+   <rect id="rect1473" x="156.03" y="68.01" width="11.269" height="1.5838" style="fill-opacity:.98824;fill:#757575;paint-order:normal;stroke-width:.21805"/>
+  </g>
+  <g id="g1520">
+   <rect id="rect36921" x="111.88" y="25.4" width="7.2054" height="38.373" style="fill-opacity:.98824;fill:#757575;paint-order:normal;stroke-width:.85824"/>
+   <path id="path1493" d="m111.88 25.4 2.1167-4.3501h2.9721l2.1167 4.3501v0.98551l-7.2054 0.07201z" style="fill-opacity:.99574;fill:#616161;paint-order:normal"/>
+  </g>
+ </g>
+ <g id="beltholder">
+  <path id="rect2403" d="m194.54 18.994h15.463v24.676l-15.463-10.477z" style="fill-opacity:.99787;fill:#757575;paint-order:normal"/>
+  <path id="rect2406" transform="scale(.26458)" d="m735.26 71.787v53.664l19.555 13.25v-66.914z" style="fill-opacity:.99787;fill:#9e9e9e;paint-order:normal"/>
+ </g>
+</svg>

@@ -1,0 +1,226 @@
+/*
+ * welcome to the messiest css code ever
+ * what the hell are you doing here lol
+ */
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #eee;
+    filter: drop-shadow(5px 5px 0px #11111122);
+    overflow: hidden;
+}
+
+.heater {
+    transition: fill 5s ease-in-out;
+}
+
+#cube {
+    transition: tranform 1s ease-in-out;
+    transform-origin: 0px 75px;
+    transform: scaleY(0);
+}
+
+@keyframes conveyorBeltMove {
+    0% {
+        stroke-dashoffset: 999;
+    }
+    100% {
+        stroke-dashoffset: 20;
+    }
+}
+
+#conveyorBelt {
+    animation: conveyorBeltMove 25s linear infinite;
+}
+
+#conveyor2Belt {
+    animation: conveyorBeltMove 25s linear infinite reverse;
+}
+
+@keyframes createCube {
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fallCube {
+    0% {
+        transform: scaleY(1) translateY(0%);
+    }
+    100% {
+        transform: scaleY(1) translateY(16.9%);
+    }
+}
+
+@keyframes cubeBeltMove {
+    0% {
+        transform: scaleY(1) translateY(16.9%) translateX(0%);
+    }
+    100% {
+        transform: scaleY(1) translateY(16.9%) translateX(37.5%);
+    }
+}
+
+@keyframes cubePistonMoveUp {
+    0% {
+        transform: scaleY(1) translateY(15.9%) translateX(37.5%);
+    }
+    100% {
+        transform: scaleY(1) translateY(6%) translateX(37.5%);
+    }
+}
+
+@keyframes cubePistonMoveForward {
+    0% {
+        transform: scaleY(1) translateY(6%) translateX(37.5%);
+    }
+    100% {
+        transform: scaleY(1) translateY(6%) translateX(58%);
+    }
+}
+
+@keyframes cubeChangeColour {
+    0% {
+        fill: #bdbdbd;
+    }
+    100% {
+        fill: #f44336;
+    }
+}
+
+@keyframes cubePistonFall {
+    0% {
+        transform: scaleY(1) translateY(6%) translateX(59%);
+    }
+    100% {
+        transform: scaleY(1) translateY(45%) translateX(59%);
+    }
+}
+
+.cube--anim--create {
+    animation: createCube 2s linear forwards;
+}
+
+.cube--anim--fall {
+    animation: fallCube 1s ease-in forwards, cubeBeltMove 2.15s linear 1s forwards, cubePistonMoveUp 1s linear 3.15s forwards, cubeChangeColour 1s ease-out 4s forwards, cubePistonMoveForward 1s linear 5s forwards, cubePistonFall 1s ease-in 6s forwards;
+}
+
+@keyframes sprayAppear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: .1;
+    }
+}
+
+#spray {
+    opacity: 0;
+    animation: sprayAppear 2s ease-out 6s alternate-reverse forwards;
+}
+
+@keyframes sprayToolReveal {
+    0% {
+        transform: translateY(-7%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes sprayToolHeadMove {
+    0% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(-60deg);
+    }
+}
+
+#sprayToolGroup {
+    transform: translateY(-7%);
+    animation: sprayToolReveal 1s ease-out 4s forwards;
+}
+
+#sprayToolHead {
+    transform: rotate(180deg);
+    transform-origin: 89.128px 81.733px;
+    animation: sprayToolHeadMove 1s ease-out 4s forwards;
+}
+
+@keyframes epic {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#armLower, #armGrabber {
+    transform: rotate(0deg);
+    transform-origin: 112.85px 52px;
+}
+
+#armHigher {
+    
+}
+
+@keyframes pistonMoveUp {
+    0% {
+        transfrom: translateY(0%);
+    }
+    100% {
+        transform: translateY(-11%);
+    }
+}
+
+#piston, #pistonTip {
+    animation: pistonMoveUp 1s linear 5.15s forwards;
+}
+
+@keyframes pistonMoveForward {
+    0% {
+        transfrom: translateX(0%);
+    }
+    100% {
+        transform: translateX(21.5%);
+    }
+}
+
+#pistonParentGroup {
+    animation: pistonMoveForward 1s linear 7s forwards;
+}
+
+@keyframes pistonBeltMove {
+    0% {
+        stroke-dashoffset: 70;
+    }
+    100% {
+        stroke-dashoffset: 20;
+    }
+}
+
+#pistonBelt {
+    animation: pistonBeltMove 1s linear 7s forwards;
+}
+
+@keyframes noteMoveOut {
+    0% {
+        
+    }
+
+    100% {
+        
+    }
+}
+
+#note {
+    
+}
