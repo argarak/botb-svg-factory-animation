@@ -27,8 +27,10 @@ class CubeAnim {
   }
 
   duplicate() {
+    console.log("yo");
     let clone = this.el.cloneNode(true);
     //this.clearAnimClasses(clone);
+    clone.classList.add("cube--anim--fall");
     this.svg.appendChild(clone);
   }
 
@@ -72,4 +74,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   }
 
   cubeAnim.init();
+
+  window.setInterval(() => {
+    cubeAnim.duplicate();
+  }, 5000);
 });

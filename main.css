@@ -9,7 +9,6 @@ body {
 
     background-color: #eee;
     filter: drop-shadow(5px 5px 0px #11111122);
-    overflow: hidden;
 }
 
 .heater {
@@ -103,12 +102,14 @@ body {
     }
 }
 
-.cube--anim--create {
-    animation: createCube 2s linear forwards;
-}
-
-.cube--anim--fall {
-    animation: fallCube 1s ease-in forwards, cubeBeltMove 2.15s linear 1s forwards, cubePistonMoveUp 1s linear 3.15s forwards, cubeChangeColour 1s ease-out 4s forwards, cubePistonMoveForward 1s linear 5s forwards, cubePistonFall 1s ease-in 6s forwards;
+.cube--anim {
+    animation: createCube 2s linear forwards,
+               fallCube 1s ease-in 2s forwards,
+               cubeBeltMove 2.15s linear 3s forwards,
+               cubePistonMoveUp 1s linear 5.15s forwards,
+               cubeChangeColour 1s ease-out 6s forwards,
+               cubePistonMoveForward 1s linear 7s forwards,
+               cubePistonFall 1s ease-in 8s forwards;
 }
 
 @keyframes sprayAppear {
@@ -213,14 +214,14 @@ body {
 
 @keyframes noteMoveOut {
     0% {
-        
+        transform: translateX(0);
     }
 
     100% {
-        
+        transform: translateX(-100%);
     }
 }
 
 #note {
-    
+    animation: noteMoveOut 5.5s linear 0s forwards infinite;
 }
