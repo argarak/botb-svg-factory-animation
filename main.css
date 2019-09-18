@@ -16,7 +16,7 @@ body {
 }
 
 #cube {
-    transition: tranform 1s ease-in-out;
+    transition: fill 2s linear;
     transform-origin: 0px 75px;
     transform: scaleY(0);
 }
@@ -31,7 +31,7 @@ body {
 }
 
 #conveyorBelt {
-    animation: conveyorBeltMove 25s linear infinite;
+    animation: conveyorBeltMove 27.1s linear infinite;
 }
 
 #conveyor2Belt {
@@ -80,7 +80,7 @@ body {
         transform: scaleY(1) translateY(6%) translateX(37.5%);
     }
     100% {
-        transform: scaleY(1) translateY(6%) translateX(58%);
+        transform: scaleY(1) translateY(6%) translateX(59%);
     }
 }
 
@@ -107,7 +107,7 @@ body {
                fallCube 1s ease-in 2s forwards,
                cubeBeltMove 2.15s linear 3s forwards,
                cubePistonMoveUp 1s linear 5.15s forwards,
-               cubeChangeColour 1s ease-out 6s forwards,
+               /*cubeChangeColour 1s ease-out 6s forwards,*/
                cubePistonMoveForward 1s linear 7s forwards,
                cubePistonFall 1s ease-in 8s forwards;
 }
@@ -146,7 +146,7 @@ body {
 
 #sprayToolGroup {
     transform: translateY(-7%);
-    animation: sprayToolReveal 1s ease-out 4s forwards;
+    animation: sprayToolReveal 1s ease-out 4s forwards, sprayToolReveal 1s ease-out 8s forwards reverse;
 }
 
 #sprayToolHead {
@@ -164,15 +164,6 @@ body {
     }
 }
 
-#armLower, #armGrabber {
-    transform: rotate(0deg);
-    transform-origin: 112.85px 52px;
-}
-
-#armHigher {
-    
-}
-
 @keyframes pistonMoveUp {
     0% {
         transfrom: translateY(0%);
@@ -183,7 +174,8 @@ body {
 }
 
 #piston, #pistonTip {
-    animation: pistonMoveUp 1s linear 5.15s forwards;
+    animation: pistonMoveUp 1.1s linear 5.05s forwards,
+               pistonMoveUp 1.1s linear 9s forwards reverse;
 }
 
 @keyframes pistonMoveForward {
@@ -196,7 +188,8 @@ body {
 }
 
 #pistonParentGroup {
-    animation: pistonMoveForward 1s linear 7s forwards;
+    animation: pistonMoveForward 1s linear 7s forwards,
+               pistonMoveForward 1s linear 9s forwards reverse;
 }
 
 @keyframes pistonBeltMove {
@@ -209,7 +202,8 @@ body {
 }
 
 #pistonBelt {
-    animation: pistonBeltMove 1s linear 7s forwards;
+    animation: pistonBeltMove 1s linear 7s forwards,
+               pistonBeltMove 1s linear 9s forwards reverse;
 }
 
 @keyframes noteMoveOut {
@@ -224,4 +218,12 @@ body {
 
 #note {
     animation: noteMoveOut 5.5s linear 0s forwards infinite;
+}
+
+#redSlider, #blueSlider, #greenSlider {
+    transition: cy 0.7s ease-in-out;
+}
+
+#sprayColourIndicator {
+    transition: fill 1s ease-in-out;
 }
