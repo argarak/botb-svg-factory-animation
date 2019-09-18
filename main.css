@@ -16,7 +16,7 @@ body {
 }
 
 #cube {
-    transition: fill 2s linear;
+    transition: fill 1s linear;
     transform-origin: 0px 75px;
     transform: scaleY(0);
 }
@@ -226,4 +226,17 @@ body {
 
 #sprayColourIndicator {
     transition: fill 1s ease-in-out;
+}
+
+@keyframes lightFlash {
+    0% {
+        fill: #e57373;
+    }
+    100% {
+        fill: #b71c1c;
+    }
+}
+
+.lightanim {
+    animation: lightFlash 0s linear 9s forwards;
 }

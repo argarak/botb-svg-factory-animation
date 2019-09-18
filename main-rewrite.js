@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   setColour(currColour);
 
   let cube = getEl("#cube", false);
+  let svg = getEl("svg", false);
 
   let sprayToolHead = getEl("#sprayToolHead", false);
   sprayToolHead.addEventListener("animationend", function() {
@@ -95,5 +96,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
     spray.style.fill = currColour;
   });
 
-  cube.addEventListener("");
+  let indicatorLight = getEl("#indicatorLight", false);
+
+  function indicatorLightAnimStart() {
+    let tmpcube = cube.cloneNode(true);
+    cube.outerHTML = "";
+    cube = tmpcube;
+
+    svg.prepend(cube);
+  }
+
+  function indicatorLightAnimEnd() {
+    let tmpindicator = indicatorLight.cloneNode(true);
+    tmpindicator.addEventListener("animationstart", indicatorLightAnimStart);
+    tmpindicator.addEventListener("animationend", indicatorLightAnimEnd);
+    indicatorLight.parentNode.replaceChild(tmpindicator, indicatorLight);
+    indicatorLight = tmpindicator;
+  }
+
+  indicatorLight.addEventListener("animationstart", indicatorLightAnimStart);
+
+  indicatorLight.addEventListener("animationend", indicatorLightAnimEnd);
 });
