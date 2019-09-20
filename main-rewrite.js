@@ -45,7 +45,6 @@ function randomint(min, max) {
 
 function setColour(hex) {
   let indicator = getEl("#sprayColourIndicator", false);
-  console.log(indicator);
   indicator.style.fill = hex;
 
   // max up value for each slider is 50 cy
@@ -70,11 +69,26 @@ function setColour(hex) {
   ];
 
   for (let i = 0; i < sliders.length; i++) {
-    sliders[i].style.cy = values[i];
+    sliders[i].style.cy = values[i] + "px";
   }
 }
 
 let currColour = "";
+
+let animatedObjects = [
+  "#spray",
+  "#sprayToolHead",
+  "#sprayToolGroup",
+  "#note",
+  "#pixelnote"
+];
+
+let pistonObjects = [
+  "#piston",
+  "#pistonTip",
+  "#pistonParentGroup",
+  "#pistonBelt"
+];
 
 document.addEventListener("DOMContentLoaded", function(event) {
   // set initial random colour
@@ -83,6 +97,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   let cube = getEl("#cube", false);
   let svg = getEl("svg", false);
+  let note = getEl("#note", false);
+  let pixelnote = getEl("#pixelnote", false);
+
+  let pistonParentGroup = getEl("#pistonParentGroup", false);
 
   let sprayToolHead = getEl("#sprayToolHead", false);
   sprayToolHead.addEventListener("animationend", function() {
@@ -100,10 +118,36 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   function indicatorLightAnimStart() {
     let tmpcube = cube.cloneNode(true);
+    tmpcube.style.fill = "#bdbdbd";
     cube.outerHTML = "";
     cube = tmpcube;
 
     svg.prepend(cube);
+  }
+
+  /*
+   * a separate function is needed for piston objects because they
+   * have to wait until their animation is reset, else the returning
+   * animation will not play and they will jump back to their initial
+   * position
+   */
+  function resetPistonObjects() {
+    for (let elquery of pistonObjects) {
+      resetObjectAnimation(getEl(elquery, false));
+    }
+
+    pistonParentGroup.removeEventListener(
+      "animationend",
+      resetPistonObjects,
+      false
+    );
+  }
+
+  function resetPixelNote() {
+    let rectList = getEl("#pixelnote *");
+    for (let rect of rectList) {
+      resetObjectAnimation(rect);
+    }
   }
 
   function indicatorLightAnimEnd() {
@@ -112,9 +156,25 @@ document.addEventListener("DOMContentLoaded", function(event) {
     tmpindicator.addEventListener("animationend", indicatorLightAnimEnd);
     indicatorLight.parentNode.replaceChild(tmpindicator, indicatorLight);
     indicatorLight = tmpindicator;
+
+    note.style.fill = currColour;
+    pixelnote.style.fill = currColour;
+    pixelnote.style.stroke = currColour;
+
+    for (let elquery of animatedObjects) {
+      resetObjectAnimation(getEl(elquery, false));
+    }
+
+    resetPistonObjects();
+    //resetPixelNote();
   }
 
   indicatorLight.addEventListener("animationstart", indicatorLightAnimStart);
-
   indicatorLight.addEventListener("animationend", indicatorLightAnimEnd);
+
+  function resetObjectAnimation(el) {
+    el.style.animation = "none";
+    el.clientHeight;
+    el.style.animation = null;
+  }
 });

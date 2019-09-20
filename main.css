@@ -11,10 +11,6 @@ body {
     filter: drop-shadow(5px 5px 0px #11111122);
 }
 
-.heater {
-    transition: fill 5s ease-in-out;
-}
-
 #cube {
     transition: fill 1s linear;
     transform-origin: 0px 75px;
@@ -166,7 +162,7 @@ body {
 
 @keyframes pistonMoveUp {
     0% {
-        transfrom: translateY(0%);
+        transform: translateY(0%);
     }
     100% {
         transform: translateY(-11%);
@@ -175,12 +171,12 @@ body {
 
 #piston, #pistonTip {
     animation: pistonMoveUp 1.1s linear 5.05s forwards,
-               pistonMoveUp 1.1s linear 9s forwards reverse;
+               pistonMoveUp 1.1s linear 8s forwards reverse;
 }
 
 @keyframes pistonMoveForward {
     0% {
-        transfrom: translateX(0%);
+        transform: translateX(0%);
     }
     100% {
         transform: translateX(21.5%);
@@ -189,7 +185,7 @@ body {
 
 #pistonParentGroup {
     animation: pistonMoveForward 1s linear 7s forwards,
-               pistonMoveForward 1s linear 9s forwards reverse;
+               pistonMoveForward 1s linear 8s forwards reverse;
 }
 
 @keyframes pistonBeltMove {
@@ -203,7 +199,7 @@ body {
 
 #pistonBelt {
     animation: pistonBeltMove 1s linear 7s forwards,
-               pistonBeltMove 1s linear 9s forwards reverse;
+               pistonBeltMove 1s linear 8s forwards reverse;
 }
 
 @keyframes noteMoveOut {
@@ -212,12 +208,50 @@ body {
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-165%);
     }
 }
 
+@keyframes pixelNoteMoveOut {
+    0% {
+        transform: translate(194.31153px, 39.718423px);
+    }
+
+    100% {
+        transform: translate(-154.31153px, 39.718423px);
+    }
+}
+
+@keyframes noteFade {
+    0% {
+        visibility: hidden;
+    }
+
+    20% {
+        visibility: visible;
+    }
+}
+
+@keyframes noteFadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 0;
+    }
+}
+
+#pixelnote {
+    fill: #bdbdbd;
+    stroke: #bdbdbd;
+
+    opacity: 1;
+    animation: pixelNoteMoveOut 9.075s linear 0s forwards, noteFade 9.075s steps(1, end) forwards;
+}
+
 #note {
-    animation: noteMoveOut 5.5s linear 0s forwards infinite;
+    animation: noteMoveOut 9.075s linear 0s forwards, noteFadeOut 9.075s steps(1, end) forwards;
 }
 
 #redSlider, #blueSlider, #greenSlider {
