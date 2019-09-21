@@ -143,13 +143,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     );
   }
 
-  function resetPixelNote() {
-    let rectList = getEl("#pixelnote *");
-    for (let rect of rectList) {
-      resetObjectAnimation(rect);
-    }
-  }
-
   function indicatorLightAnimEnd() {
     let tmpindicator = indicatorLight.cloneNode(true);
     tmpindicator.addEventListener("animationstart", indicatorLightAnimStart);
@@ -166,7 +159,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     resetPistonObjects();
-    //resetPixelNote();
   }
 
   indicatorLight.addEventListener("animationstart", indicatorLightAnimStart);
