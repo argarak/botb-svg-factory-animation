@@ -352,7 +352,7 @@ body {
   <rect id="rect1070" x="63.406" y="163.22" width="21.342" height="7.328" style="fill-opacity:.99147;fill:#424242;paint-order:normal"/>
   <path id="rect1090" transform="scale(.26458)" d="m508.71 559.87v56.152h230.4l-32.42-56.152h-197.98zm0 209.61v54.426h197.98 87.004v-54.426h-284.99z" style="fill-opacity:.99147;fill:#616161;paint-order:normal"/>
   <path id="path1094" d="m146.21 148.13v-16.104l-10.583-10.575h50.316l-10.583 10.575v16.104z" style="fill-opacity:.99147;fill:#616161;paint-order:normal"/>
-  <path id="machineWindow1" transform="scale(.26458)" d="m508.71 616.02v153.45h284.99v-58.912l-54.584-94.541h-230.4z" style="fill-opacity:.99147;fill:#eee;paint-order:normal"/>
+  <path id="machineWindow1" transform="scale(.26458)" d="m508.71 616.02v153.45h284.99v-58.912l-54.584-94.541h-230.4z" style="fill-opacity:1;fill:#eee;paint-order:normal"/>
   <path id="machineWindow2" transform="scale(.26458)" d="m739.12 616.02v153.45h54.584v-58.912l-54.584-94.541z" style="fill-opacity:.99147;fill:#e0e0e0;paint-order:normal"/>
   <rect id="rect1525" x="134.6" y="148.13" width="4.7461" height="69.858" style="fill-opacity:.99147;fill:#424242;paint-order:normal"/>
   <path id="rect1122" transform="scale(.26458)" d="m508.71 580.07v15.746h218.74l-9.0918-15.746h-209.65z" style="fill-opacity:.97917;fill:#f9a825;paint-order:normal;stroke-width:2.8596"/>
