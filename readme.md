@@ -5,7 +5,7 @@ The root of this repo contains the HTML version of this animation, the builds di
 
 ### Note
 
-<script> and <style> are both in the SVG 1.1 specification and are perfectly reasonable tags to use on SVG graphics to be viewed on web browsers. While many other image viewers may have issues with the animated part of this SVG file, it was intended from the start that this entry would only be viewed in web browsers, since only recent web browsers have full implementations of the SVG spec.
+\<script\> and \<style\> are both in the SVG 1.1 specification and are perfectly reasonable tags to use on SVG graphics to be viewed on web browsers. While many other image viewers may have issues with the animated part of this SVG file, it was intended from the start that this entry would only be viewed in web browsers, since only recent web browsers have full implementations of the SVG spec.
 
 ### Description
 
